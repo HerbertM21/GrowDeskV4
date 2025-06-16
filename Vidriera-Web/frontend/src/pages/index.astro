@@ -1,0 +1,701 @@
+---
+// Página principal de Vidriera Profesional
+const pageTitle = 'Cristales del Valle - Especialistas en Vidriería San Fernando, Chile';
+const pageDescription = 'Empresa líder en vidriería en San Fernando, Chile. Ventanas, mamparas, fachadas y reparaciones. +15 años de experiencia. Cotización gratuita.';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<div class="header-content">
+					<div class="logo">
+						<h1>🏢 Cristales del Valle</h1>
+					</div>
+					<nav class="nav">
+						<a href="/" class="nav-link active">Inicio</a>
+						<a href="/servicios" class="nav-link">Servicios</a>
+						<a href="/productos" class="nav-link">Productos</a>
+						<a href="/nosotros" class="nav-link">Nosotros</a>
+						<a href="/contacto" class="nav-link">Contacto</a>
+						<a href="/cotizacion" class="btn-primary">Cotizar</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="container">
+				<div class="hero-content">
+					<h1>Especialistas en Vidriería</h1>
+					<p>Transformamos tus espacios con cristales de alta calidad. Más de 15 años de experiencia en San Fernando, Chile, respaldan nuestro compromiso con la excelencia.</p>
+					<div class="hero-buttons">
+						<a href="/cotizacion" class="btn-primary">Cotización Gratuita</a>
+						<a href="tel:+56987654321" class="btn-secondary">Llamar: +56 9 8765 4321</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Stats Section -->
+		<section class="stats">
+			<div class="container">
+				<div class="stats-grid">
+					<div class="stat-item">
+						<div class="stat-number">2,500+</div>
+						<div class="stat-label">Clientes Satisfechos</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">15+</div>
+						<div class="stat-label">Años de Experiencia</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">98%</div>
+						<div class="stat-label">Satisfacción del Cliente</div>
+					</div>
+					<div class="stat-item">
+						<div class="stat-number">24/7</div>
+						<div class="stat-label">Emergencias</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="services">
+			<div class="container">
+				<h2>Nuestros Servicios Destacados</h2>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-icon">🏠</div>
+						<h3>Ventanas Residenciales</h3>
+						<p>Instalación y reparación de ventanas para hogares con cristales de eficiencia energética y diseños modernos.</p>
+						<div class="service-price">Desde $85.000 CLP/m²</div>
+						<a href="/servicios" class="btn-secondary">Ver Más</a>
+					</div>
+					
+					<div class="service-card">
+						<div class="service-icon">🚿</div>
+						<h3>Mamparas de Baño</h3>
+						<p>Mamparas modernas con cristal templado, diseños personalizados y herrajes de primera calidad.</p>
+						<div class="service-price">Desde $125.000 CLP</div>
+						<a href="/servicios" class="btn-secondary">Ver Más</a>
+					</div>
+					
+					<div class="service-card">
+						<div class="service-icon">🏢</div>
+						<h3>Fachadas Comerciales</h3>
+						<p>Sistemas profesionales de fachadas para edificios comerciales con certificación y garantía extendida.</p>
+						<div class="service-price">Desde $150.000 CLP/m²</div>
+						<a href="/servicios" class="btn-secondary">Ver Más</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why Choose Us -->
+		<section class="why-us">
+			<div class="container">
+				<h2>¿Por Qué Elegir Vidriera Profesional?</h2>
+				<div class="features-grid">
+					<div class="feature">
+						<div class="feature-icon">⭐</div>
+						<h3>Calidad Garantizada</h3>
+						<p>Materiales certificados y garantía extendida hasta 7 años en todos nuestros trabajos.</p>
+					</div>
+					
+					<div class="feature">
+						<div class="feature-icon">🔧</div>
+						<h3>Instalación Profesional</h3>
+						<p>Técnicos especializados con certificación internacional y herramientas de última generación.</p>
+					</div>
+					
+					<div class="feature">
+						<div class="feature-icon">💰</div>
+						<h3>Precios Competitivos</h3>
+						<p>Los mejores precios del mercado chileno sin comprometer la calidad de materiales y servicio.</p>
+					</div>
+					
+					<div class="feature">
+						<div class="feature-icon">📞</div>
+						<h3>Atención 24/7</h3>
+						<p>Servicio de emergencia disponible las 24 horas para reparaciones urgentes.</p>
+					</div>
+					
+					<div class="feature">
+						<div class="feature-icon">📏</div>
+						<h3>Medición Gratuita</h3>
+						<p>Visita técnica sin costo para medición exacta y asesoramiento personalizado.</p>
+					</div>
+					
+					<div class="feature">
+						<div class="feature-icon">⚡</div>
+						<h3>Instalación Rápida</h3>
+						<p>Cumplimos los plazos acordados con opción de servicio express en 24-48 horas.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Testimonials -->
+		<section class="testimonials">
+			<div class="container">
+				<h2>Lo Que Dicen Nuestros Clientes</h2>
+				<div class="testimonials-grid">
+					<div class="testimonial">
+						<div class="testimonial-content">
+							<p>"Excelente trabajo, instalaron nuestras ventanas nuevas en tiempo récord. El equipo fue muy profesional y el resultado superó nuestras expectativas."</p>
+						</div>
+						<div class="testimonial-author">
+							<strong>María González</strong>
+							<span>San Fernando</span>
+						</div>
+					</div>
+					
+					<div class="testimonial">
+						<div class="testimonial-content">
+							<p>"La mampara de mi baño quedó perfecta. Muy buena calidad de materiales y la instalación fue limpia y ordenada. Los recomiendo completamente."</p>
+						</div>
+						<div class="testimonial-author">
+							<strong>Carlos Mendoza</strong>
+							<span>Rancagua</span>
+						</div>
+					</div>
+					
+					<div class="testimonial">
+						<div class="testimonial-content">
+							<p>"Trabajamos con ellos en la fachada de nuestro edificio comercial. Profesionalismo de primera, cumplieron todos los plazos y normativas."</p>
+						</div>
+						<div class="testimonial-author">
+							<strong>Constructora Vásquez</strong>
+							<span>San Fernando</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="cta">
+			<div class="container">
+				<div class="cta-content">
+					<h2>¿Listo para Transformar tu Espacio?</h2>
+					<p>Obtén una cotización gratuita y personalizada para tu proyecto de vidriería</p>
+					<div class="cta-buttons">
+						<a href="/cotizacion" class="btn-primary">Solicitar Cotización</a>
+						<a href="/contacto" class="btn-secondary">Más Información</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>🏢 Cristales del Valle</h3>
+						<p>Especialistas en vidriería con más de 15 años transformando espacios en San Fernando, Chile.</p>
+					</div>
+					<div class="footer-section">
+						<h4>Servicios</h4>
+						<ul>
+							<li><a href="/servicios">Ventanas Residenciales</a></li>
+							<li><a href="/servicios">Fachadas Comerciales</a></li>
+							<li><a href="/servicios">Mamparas de Baño</a></li>
+							<li><a href="/servicios">Mantención</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h4>Contacto</h4>
+						<ul>
+							<li>📞 +56 9 8765 4321</li>
+							<li>📧 info@vidriera.cl</li>
+							<li>📍 Avenida Manuel Rodríguez 456, San Fernando, Chile</li>
+							<li>🕒 Lun-Vie: 8:00-18:00</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2024 Cristales del Valle. Todos los derechos reservados.</p>
+				</div>
+			</div>
+		</footer>
+
+		<style>
+			/* Reset y Base */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+				line-height: 1.6;
+				color: #1e293b;
+				background-color: #ffffff;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			/* Header */
+			.header {
+				background: #ffffff;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.header-content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1rem 0;
+			}
+
+			.logo h1 {
+				color: #4f46e5;
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+
+			.nav {
+				display: flex;
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.nav-link {
+				color: #64748b;
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.3s;
+			}
+
+			.nav-link:hover,
+			.nav-link.active {
+				color: #4f46e5;
+			}
+
+			/* Buttons */
+			.btn-primary {
+				background: #4f46e5;
+				color: white;
+				padding: 12px 24px;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: all 0.3s;
+				display: inline-block;
+			}
+
+			.btn-primary:hover {
+				background: #3730a3;
+				transform: translateY(-2px);
+				box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+			}
+
+			.btn-secondary {
+				background: white;
+				color: #1e293b;
+				padding: 12px 24px;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				border: 2px solid #e2e8f0;
+				transition: all 0.3s;
+				display: inline-block;
+			}
+
+			.btn-secondary:hover {
+				border-color: #4f46e5;
+				color: #4f46e5;
+			}
+
+			/* Hero Section */
+			.hero {
+				background: linear-gradient(135deg, #fef2f2 0%, #eff6ff 100%);
+				padding: 80px 0;
+			}
+
+			.hero-content {
+				text-align: center;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.hero-content h1 {
+				font-size: 3.5rem;
+				font-weight: 800;
+				line-height: 1.2;
+				margin-bottom: 1.5rem;
+			}
+
+			.hero-content p {
+				font-size: 1.25rem;
+				color: #64748b;
+				margin-bottom: 2rem;
+				max-width: 600px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.hero-buttons {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				margin-bottom: 3rem;
+				flex-wrap: wrap;
+			}
+
+			/* Stats Section */
+			.stats {
+				padding: 60px 0;
+				background: #f8fafc;
+			}
+
+			.stats-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2rem;
+			}
+
+			.stat-item {
+				text-align: center;
+				padding: 2rem;
+				background: white;
+				border-radius: 12px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+			}
+
+			.stat-number {
+				font-size: 2.5rem;
+				font-weight: 800;
+				color: #4f46e5;
+				margin-bottom: 0.5rem;
+			}
+
+			.stat-label {
+				color: #64748b;
+				font-weight: 500;
+			}
+
+			/* Services Section */
+			.services {
+				padding: 80px 0;
+			}
+
+			.services h2 {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 4rem;
+			}
+
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+			}
+
+			.service-card {
+				background: white;
+				padding: 2rem;
+				border-radius: 16px;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s;
+			}
+
+			.service-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.service-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+
+			.service-card h3 {
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+			}
+
+			.service-card p {
+				color: #64748b;
+				margin-bottom: 1.5rem;
+			}
+
+			.service-price {
+				font-size: 1.25rem;
+				font-weight: 700;
+				color: #4f46e5;
+				margin-bottom: 1.5rem;
+			}
+
+			/* Why Us Section */
+			.why-us {
+				padding: 80px 0;
+				background: #f8fafc;
+			}
+
+			.why-us h2 {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 4rem;
+			}
+
+			.features-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+			}
+
+			.feature {
+				text-align: center;
+				padding: 2rem;
+				background: white;
+				border-radius: 16px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+			}
+
+			.feature-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+
+			.feature h3 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+			}
+
+			.feature p {
+				color: #64748b;
+			}
+
+			/* Testimonials */
+			.testimonials {
+				padding: 80px 0;
+			}
+
+			.testimonials h2 {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 4rem;
+			}
+
+			.testimonials-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+			}
+
+			.testimonial {
+				background: white;
+				padding: 2rem;
+				border-radius: 16px;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+			}
+
+			.testimonial-content p {
+				font-style: italic;
+				margin-bottom: 1.5rem;
+				color: #64748b;
+			}
+
+			.testimonial-author strong {
+				color: #1e293b;
+				display: block;
+				margin-bottom: 0.25rem;
+			}
+
+			.testimonial-author span {
+				color: #64748b;
+				font-size: 0.875rem;
+			}
+
+			/* CTA Section */
+			.cta {
+				background: #4f46e5;
+				color: white;
+				padding: 60px 0;
+			}
+
+			.cta-content {
+				text-align: center;
+			}
+
+			.cta h2 {
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+			}
+
+			.cta p {
+				font-size: 1.125rem;
+				margin-bottom: 2rem;
+				opacity: 0.9;
+			}
+
+			.cta-buttons {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.cta .btn-primary {
+				background: white;
+				color: #4f46e5;
+			}
+
+			.cta .btn-primary:hover {
+				background: #f8fafc;
+			}
+
+			.cta .btn-secondary {
+				background: transparent;
+				color: white;
+				border-color: white;
+			}
+
+			.cta .btn-secondary:hover {
+				background: white;
+				color: #4f46e5;
+			}
+
+			/* Footer */
+			.footer {
+				background: #1e293b;
+				color: white;
+				padding: 60px 0 20px 0;
+			}
+
+			.footer-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			.footer-section h3,
+			.footer-section h4 {
+				margin-bottom: 1rem;
+				color: white;
+			}
+
+			.footer-section ul {
+				list-style: none;
+			}
+
+			.footer-section li {
+				margin-bottom: 0.5rem;
+			}
+
+			.footer-section a {
+				color: #94a3b8;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			.footer-section a:hover {
+				color: white;
+			}
+
+			.footer-bottom {
+				border-top: 1px solid #334155;
+				padding-top: 1rem;
+				text-align: center;
+				color: #94a3b8;
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.nav {
+					display: none;
+				}
+
+				.hero-content h1 {
+					font-size: 2.5rem;
+				}
+
+				.hero-buttons {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.stats-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.services-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.cta-buttons {
+					flex-direction: column;
+					align-items: center;
+				}
+			}
+		</style>
+
+		<!-- GrowDesk Widget -->
+		<link rel="stylesheet" href="/growdesk-widget.css">
+		
+		<!-- Configuración del Widget de GrowDesk -->
+		<script is:inline>
+			window.GrowDeskConfig = {
+				apiUrl: 'http://localhost:3002/widget',
+				brandName: 'Cristales del Valle - Soporte',
+				primaryColor: '#4f46e5',
+				position: 'bottom-right',
+				welcomeMessage: '¡Hola! ¿En qué podemos ayudarte hoy?',
+				companyName: 'Cristales del Valle',
+				supportHours: 'Lun-Vie: 8:00-18:00, Sáb: 9:00-13:00',
+				emergencyPhone: '+56 9 8765 4321',
+				debug: true
+			};
+
+			// Asegurar que el widget se inicialice cuando el DOM esté listo
+			document.addEventListener('DOMContentLoaded', function() {
+				console.log('DOM loaded, GrowDesk config:', window.GrowDeskConfig);
+				
+				// Crear y cargar el script del widget con parámetro de versión para evitar cache
+				const script = document.createElement('script');
+				const timestamp = Date.now(); // Usar timestamp actual para forzar recarga
+				script.src = `/growdesk-widget.umd.js?v=${timestamp}`;
+				script.setAttribute('data-api-url', 'http://localhost:3002/widget');
+				script.setAttribute('data-widget-id', 'cristales-del-valle');
+				script.setAttribute('data-widget-token', 'cristales-token-2024');
+				script.setAttribute('data-default-name', 'Cliente');
+				script.setAttribute('data-default-email', 'cliente@example.com');
+				
+				document.head.appendChild(script);
+			});
+		</script>
+
+		<!-- Vue.js (requerido por el widget) -->
+		<script is:inline src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	</body>
+</html>

@@ -1,0 +1,711 @@
+---
+// Página de contacto de Cristales del Valle
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contacto - Cristales del Valle</title>
+		<meta name="description" content="Contáctanos para cotizaciones de vidriería en San Fernando, Chile. Respuesta rápida y profesional." />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<div class="header-content">
+					<div class="logo">
+						<h1>🏢 Cristales del Valle</h1>
+					</div>
+					<nav class="nav">
+						<a href="/" class="nav-link">Inicio</a>
+						<a href="/servicios" class="nav-link">Servicios</a>
+						<a href="/productos" class="nav-link">Productos</a>
+						<a href="/nosotros" class="nav-link">Nosotros</a>
+						<a href="/contacto" class="nav-link active">Contacto</a>
+						<a href="/cotizacion" class="btn-primary">Cotizar</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="container">
+				<div class="hero-content">
+					<h1>Contáctanos</h1>
+					<p>Estamos aquí para ayudarte con tu proyecto de vidriería. Respuesta garantizada en menos de 24 horas.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Info Section -->
+		<section class="contact-info">
+			<div class="container">
+				<div class="contact-grid">
+					<div class="contact-card">
+						<div class="contact-icon">📞</div>
+						<h3>Teléfono</h3>
+						<p>+56 9 8765 4321</p>
+						<p>+56 72 234 5678</p>
+						<small>Disponible Lun-Vie 8:00-18:00</small>
+					</div>
+
+					<div class="contact-card">
+						<div class="contact-icon">📧</div>
+						<h3>Email</h3>
+						<p>info@cristalesdelvalle.cl</p>
+						<p>ventas@cristalesdelvalle.cl</p>
+						<small>Respuesta en 24 horas</small>
+					</div>
+
+					<div class="contact-card">
+						<div class="contact-icon">📍</div>
+						<h3>Dirección</h3>
+						<p>Avenida Manuel Rodríguez 456</p>
+						<p>San Fernando, Chile</p>
+						<small>Con estacionamiento disponible</small>
+					</div>
+
+					<div class="contact-card">
+						<div class="contact-icon">🕒</div>
+						<h3>Horarios</h3>
+						<p>Lunes a Viernes: 8:00 - 18:00</p>
+						<p>Sábados: 9:00 - 13:00</p>
+						<small>Emergencias 24/7</small>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Form Section -->
+		<section class="contact-form-section">
+			<div class="container">
+				<div class="form-grid">
+					<div class="form-info">
+						<h2>¿Necesitas una Cotización?</h2>
+						<p>Completa el formulario y nos pondremos en contacto contigo en el menor tiempo posible con una cotización detallada.</p>
+						
+						<div class="info-features">
+							<div class="info-feature">
+								<span class="feature-check">✓</span>
+								<span>Cotización gratuita sin compromiso</span>
+							</div>
+							<div class="info-feature">
+								<span class="feature-check">✓</span>
+								<span>Visita técnica incluida</span>
+							</div>
+							<div class="info-feature">
+								<span class="feature-check">✓</span>
+								<span>Precios competitivos</span>
+							</div>
+							<div class="info-feature">
+								<span class="feature-check">✓</span>
+								<span>Garantía de calidad</span>
+							</div>
+						</div>
+					</div>
+
+					<form class="contact-form" action="#" method="POST">
+						<div class="form-group">
+							<label for="nombre">Nombre Completo *</label>
+							<input type="text" id="nombre" name="nombre" required>
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email *</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+
+						<div class="form-group">
+							<label for="telefono">Teléfono *</label>
+							<input type="tel" id="telefono" name="telefono" required>
+						</div>
+
+						<div class="form-group">
+							<label for="servicio">Tipo de Servicio</label>
+							<select id="servicio" name="servicio">
+								<option value="">Selecciona un servicio...</option>
+								<option value="ventanas-residenciales">Ventanas Residenciales</option>
+								<option value="mamparas-bano">Mamparas de Baño</option>
+								<option value="fachadas-comerciales">Fachadas Comerciales</option>
+								<option value="reparaciones">Reparaciones</option>
+								<option value="puertas-cristal">Puertas de Cristal</option>
+								<option value="cristales-seguridad">Cristales de Seguridad</option>
+								<option value="otro">Otro</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="presupuesto">Presupuesto Estimado</label>
+							<select id="presupuesto" name="presupuesto">
+								<option value="">Selecciona un rango...</option>
+								<option value="0-100000">Menos de $100.000 CLP</option>
+								<option value="100000-300000">$100.000 - $300.000 CLP</option>
+								<option value="300000-500000">$300.000 - $500.000 CLP</option>
+								<option value="500000-1000000">$500.000 - $1.000.000 CLP</option>
+								<option value="1000000+">Más de $1.000.000 CLP</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="urgencia">Urgencia del Proyecto</label>
+							<select id="urgencia" name="urgencia">
+								<option value="">Selecciona...</option>
+								<option value="inmediato">Inmediato (1-3 días)</option>
+								<option value="urgente">Urgente (1 semana)</option>
+								<option value="normal">Normal (2-4 semanas)</option>
+								<option value="flexible">Flexible (más de 1 mes)</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="mensaje">Descripción del Proyecto *</label>
+							<textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tu proyecto, medidas aproximadas, ubicación, etc." required></textarea>
+						</div>
+
+						<div class="form-group checkbox-group">
+							<label class="checkbox-label">
+								<input type="checkbox" name="acepto" required>
+								<span class="checkmark"></span>
+								Acepto los <a href="#" class="link">términos y condiciones</a> y autorizo el tratamiento de mis datos personales
+							</label>
+						</div>
+
+						<button type="submit" class="btn-primary">Enviar Solicitud</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Map Section -->
+		<section class="map-section">
+			<div class="container">
+				<h2>Cómo Llegar</h2>
+				<div class="map-container">
+					<div class="map-placeholder">
+						<div class="map-content">
+							<h3>📍 Nuestra Ubicación</h3>
+							<p><strong>Avenida Manuel Rodríguez 456</strong></p>
+							<p>San Fernando, Región del Libertador General Bernardo O'Huggins</p>
+							<p>Chile</p>
+							<br>
+							<p><strong>Referencias:</strong></p>
+							<ul>
+								<li>• A 2 cuadras de la Plaza de Armas</li>
+								<li>• Frente al Banco Estado</li>
+								<li>• Cerca del Terminal de Buses</li>
+								<li>• Estacionamiento disponible</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Emergency Contact -->
+		<section class="emergency-contact">
+			<div class="container">
+				<div class="emergency-card">
+					<div class="emergency-icon">🚨</div>
+					<div class="emergency-content">
+						<h3>Emergencias 24/7</h3>
+						<p>Para reparaciones urgentes o emergencias fuera del horario comercial</p>
+						<a href="tel:+56987654321" class="emergency-phone">+56 9 8765 4321</a>
+						<small>Servicio de emergencia disponible todos los días</small>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-section">
+						<h3>🏢 Cristales del Valle</h3>
+						<p>Especialistas en vidriería con más de 15 años transformando espacios en San Fernando, Chile.</p>
+					</div>
+					<div class="footer-section">
+						<h4>Servicios</h4>
+						<ul>
+							<li><a href="/servicios">Ventanas Residenciales</a></li>
+							<li><a href="/servicios">Fachadas Comerciales</a></li>
+							<li><a href="/servicios">Mamparas de Baño</a></li>
+							<li><a href="/servicios">Mantención</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h4>Contacto</h4>
+						<ul>
+							<li>📞 +56 9 8765 4321</li>
+							<li>📧 info@cristalesdelvalle.cl</li>
+							<li>📍 Avenida Manuel Rodríguez 456, San Fernando, Chile</li>
+							<li>🕒 Lun-Vie: 8:00-18:00</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>&copy; 2024 Cristales del Valle. Todos los derechos reservados.</p>
+				</div>
+			</div>
+		</footer>
+
+		<!-- GrowDesk Widget -->
+		<link rel="stylesheet" href="/growdesk-widget.css">
+
+		<!-- Vue.js (requerido por el widget) -->
+		<script is:inline src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+		<!-- GrowDesk Widget Configuration -->
+		<script is:inline>
+			window.GrowDeskConfig = {
+				apiUrl: 'http://localhost:3002/widget',
+				brandName: 'Cristales del Valle - Soporte',
+				primaryColor: '#4f46e5',
+				position: 'bottom-right',
+				welcomeMessage: '¿Cómo podemos contactarte?',
+				companyName: 'Cristales del Valle',
+				supportHours: 'Lun-Vie: 8:00-18:00, Sáb: 9:00-13:00',
+				emergencyPhone: '+56 9 8765 4321',
+				debug: true
+			};
+		</script>
+
+		<!-- Widget Script -->
+		<script is:inline>
+			// Cargar el widget externamente
+			document.addEventListener('DOMContentLoaded', function() {
+				const script = document.createElement('script');
+				script.src = '/growdesk-widget.umd.js';
+				script.setAttribute('data-api-url', 'http://localhost:3002/widget');
+				script.setAttribute('data-widget-id', 'cristales-del-valle');
+				script.setAttribute('data-widget-token', 'cristales-token-2024');
+				script.setAttribute('data-default-name', 'Cliente');
+				script.setAttribute('data-default-email', 'cliente@example.com');
+				
+				document.head.appendChild(script);
+			});
+		</script>
+
+		<style>
+			/* Reset y Base */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+				line-height: 1.6;
+				color: #1e293b;
+				background-color: #ffffff;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			/* Header */
+			.header {
+				background: #ffffff;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+
+			.header-content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1rem 0;
+			}
+
+			.logo h1 {
+				color: #4f46e5;
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+
+			.nav {
+				display: flex;
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.nav-link {
+				color: #64748b;
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.3s;
+			}
+
+			.nav-link:hover,
+			.nav-link.active {
+				color: #4f46e5;
+			}
+
+			/* Buttons */
+			.btn-primary {
+				background: #4f46e5;
+				color: white;
+				padding: 12px 24px;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				transition: all 0.3s;
+				display: inline-block;
+				border: none;
+				cursor: pointer;
+			}
+
+			.btn-primary:hover {
+				background: #3730a3;
+				transform: translateY(-2px);
+				box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+			}
+
+			.link {
+				color: #4f46e5;
+				text-decoration: none;
+			}
+
+			.link:hover {
+				text-decoration: underline;
+			}
+
+			/* Hero Section */
+			.hero {
+				background: linear-gradient(135deg, #fef2f2 0%, #eff6ff 100%);
+				padding: 80px 0;
+			}
+
+			.hero-content {
+				text-align: center;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.hero-content h1 {
+				font-size: 3rem;
+				font-weight: 800;
+				line-height: 1.2;
+				margin-bottom: 1.5rem;
+			}
+
+			.hero-content p {
+				font-size: 1.25rem;
+				color: #64748b;
+			}
+
+			/* Contact Info Section */
+			.contact-info {
+				padding: 80px 0;
+				background: #f8fafc;
+			}
+
+			.contact-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+			}
+
+			.contact-card {
+				background: white;
+				padding: 2rem;
+				border-radius: 16px;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+				text-align: center;
+				transition: transform 0.3s;
+			}
+
+			.contact-card:hover {
+				transform: translateY(-5px);
+			}
+
+			.contact-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+
+			.contact-card h3 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+				color: #1e293b;
+			}
+
+			.contact-card p {
+				color: #4f46e5;
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+			}
+
+			.contact-card small {
+				color: #64748b;
+				font-size: 0.875rem;
+			}
+
+			/* Contact Form Section */
+			.contact-form-section {
+				padding: 80px 0;
+			}
+
+			.form-grid {
+				display: grid;
+				grid-template-columns: 1fr 1.5fr;
+				gap: 4rem;
+				align-items: start;
+			}
+
+			.form-info h2 {
+				font-size: 2rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+			}
+
+			.form-info p {
+				color: #64748b;
+				margin-bottom: 2rem;
+			}
+
+			.info-features {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			.info-feature {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+			}
+
+			.feature-check {
+				color: #4f46e5;
+				font-weight: 600;
+			}
+
+			/* Form Styles */
+			.contact-form {
+				background: white;
+				padding: 2rem;
+				border-radius: 16px;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+			}
+
+			.form-group {
+				margin-bottom: 1.5rem;
+			}
+
+			.form-group label {
+				display: block;
+				margin-bottom: 0.5rem;
+				font-weight: 500;
+				color: #1e293b;
+			}
+
+			.form-group input,
+			.form-group select,
+			.form-group textarea {
+				width: 100%;
+				padding: 12px 16px;
+				border: 2px solid #e2e8f0;
+				border-radius: 8px;
+				font-size: 1rem;
+				transition: border-color 0.3s;
+			}
+
+			.form-group input:focus,
+			.form-group select:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: #4f46e5;
+			}
+
+			.checkbox-group {
+				display: flex;
+				align-items: flex-start;
+				gap: 0.75rem;
+			}
+
+			.checkbox-label {
+				display: flex;
+				align-items: flex-start;
+				gap: 0.75rem;
+				cursor: pointer;
+				font-size: 0.875rem;
+				line-height: 1.5;
+			}
+
+			.checkbox-label input {
+				width: auto;
+			}
+
+			/* Map Section */
+			.map-section {
+				padding: 80px 0;
+				background: #f8fafc;
+			}
+
+			.map-section h2 {
+				text-align: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-bottom: 3rem;
+			}
+
+			.map-container {
+				background: white;
+				border-radius: 16px;
+				overflow: hidden;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+			}
+
+			.map-placeholder {
+				height: 400px;
+				background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+			}
+
+			.map-content {
+				text-align: center;
+				max-width: 500px;
+			}
+
+			.map-content h3 {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.map-content ul {
+				list-style: none;
+				text-align: left;
+				margin-top: 1rem;
+			}
+
+			.map-content li {
+				margin-bottom: 0.5rem;
+			}
+
+			/* Emergency Contact */
+			.emergency-contact {
+				padding: 60px 0;
+				background: #4f46e5;
+				color: white;
+			}
+
+			.emergency-card {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				max-width: 800px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.emergency-icon {
+				font-size: 4rem;
+			}
+
+			.emergency-content h3 {
+				font-size: 1.5rem;
+				margin-bottom: 0.5rem;
+			}
+
+			.emergency-phone {
+				display: inline-block;
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: white;
+				text-decoration: none;
+				margin: 1rem 0 0.5rem 0;
+			}
+
+			.emergency-phone:hover {
+				text-decoration: underline;
+			}
+
+			/* Footer */
+			.footer {
+				background: #1e293b;
+				color: white;
+				padding: 60px 0 20px 0;
+			}
+
+			.footer-content {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			.footer-section h3,
+			.footer-section h4 {
+				margin-bottom: 1rem;
+				color: white;
+			}
+
+			.footer-section ul {
+				list-style: none;
+			}
+
+			.footer-section li {
+				margin-bottom: 0.5rem;
+			}
+
+			.footer-section a {
+				color: #94a3b8;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			.footer-section a:hover {
+				color: white;
+			}
+
+			.footer-bottom {
+				border-top: 1px solid #334155;
+				padding-top: 1rem;
+				text-align: center;
+				color: #94a3b8;
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.nav {
+					display: none;
+				}
+
+				.hero-content h1 {
+					font-size: 2.5rem;
+				}
+
+				.form-grid {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+
+				.emergency-card {
+					flex-direction: column;
+					text-align: center;
+				}
+
+				.contact-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</body>
+</html> 

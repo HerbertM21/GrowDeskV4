@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Widget</title>
+    <link rel="stylesheet" href="/growdesk-widget.css">
+</head>
+<body>
+    <h1>Página de Prueba del Widget</h1>
+    <p>Esta es una página de prueba para verificar que el widget funciona correctamente.</p>
+
+    <!-- Configuración del Widget -->
+    <script>
+        window.GrowDeskConfig = {
+            apiUrl: 'http://localhost:3002/widget',
+            brandName: 'Cristales del Valle - Soporte',
+            primaryColor: '#4f46e5',
+            position: 'bottom-right',
+            welcomeMessage: '¡Hola! ¿En qué podemos ayudarte hoy?',
+            companyName: 'Cristales del Valle',
+            supportHours: 'Lun-Vie: 8:00-18:00, Sáb: 9:00-13:00',
+            emergencyPhone: '+56 9 8765 4321',
+            debug: true
+        };
+
+        // Cargar el widget
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, GrowDesk config:', window.GrowDeskConfig);
+            
+            const script = document.createElement('script');
+            script.src = '/growdesk-widget.umd.js';
+            script.setAttribute('data-api-url', 'http://localhost:3002/widget');
+            script.setAttribute('data-widget-id', 'cristales-del-valle');
+            script.setAttribute('data-widget-token', 'cristales-token-2024');
+            script.setAttribute('data-default-name', 'Cliente');
+            script.setAttribute('data-default-email', 'cliente@example.com');
+            
+            script.onload = function() {
+                console.log('Widget script loaded successfully');
+            };
+            
+            script.onerror = function() {
+                console.error('Error loading widget script');
+            };
+            
+            document.head.appendChild(script);
+        });
+    </script>
+</body>
+</html> 
