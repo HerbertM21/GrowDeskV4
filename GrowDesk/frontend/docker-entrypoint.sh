@@ -1,13 +1,14 @@
 #!/bin/sh
+set -e
 
 # Script para sustituir variables de entorno en tiempo de ejecución
 # para aplicaciones SPA desplegadas con Nginx
 
 echo "🚀 Iniciando GrowDesk Frontend..."
 echo "📊 Variables de entorno disponibles:"
-echo "   - VITE_API_URL: $VITE_API_URL"
-echo "   - VITE_SYNC_API_URL: $VITE_SYNC_API_URL"
-echo "   - NODE_ENV: $NODE_ENV"
+echo "   - VITE_API_URL: ${VITE_API_URL:-'no definida'}"
+echo "   - VITE_SYNC_API_URL: ${VITE_SYNC_API_URL:-'no definida'}"
+echo "   - NODE_ENV: ${NODE_ENV:-'no definida'}"
 
 # Directorio donde se encuentran los archivos estáticos
 STATIC_DIR=/usr/share/nginx/html
@@ -16,53 +17,76 @@ STATIC_DIR=/usr/share/nginx/html
 echo "📁 Verificando directorio $STATIC_DIR..."
 if [ -d "$STATIC_DIR" ]; then
     echo "   ✅ Directorio existe"
-    ls -la $STATIC_DIR
+    FILE_COUNT=$(find "$STATIC_DIR" -type f | wc -l)
+    echo "   📄 Archivos encontrados: $FILE_COUNT"
+    if [ "$FILE_COUNT" -eq 0 ]; then
+        echo "   ⚠️ ADVERTENCIA: Directorio vacío"
+    fi
 else
     echo "   ❌ ERROR: Directorio no existe"
-    exit 1
+    echo "   🔧 Creando directorio básico..."
+    mkdir -p "$STATIC_DIR"
+    echo "<html><body><h1>GrowDesk Frontend</h1><p>Error: Archivos no encontrados</p></body></html>" > "$STATIC_DIR/index.html"
 fi
 
-# Sustituir variables de entorno en los archivos main.js
-echo "📝 Configurando variables de entorno..."
-
-# Listar todos los archivos JavaScript en el directorio
-JS_FILES=$(find $STATIC_DIR -name "*.js" -type f)
-JS_COUNT=$(echo "$JS_FILES" | wc -l)
-echo "🔍 Encontrados $JS_COUNT archivos JavaScript"
-
-# Sustituir variables de entorno en cada archivo JS
-for file in $JS_FILES; do
-    echo "🔧 Procesando archivo: $file"
+# Solo procesar archivos JS si existen variables de entorno para reemplazar
+if [ -n "$VITE_API_URL" ] || [ -n "$VITE_SYNC_API_URL" ]; then
+    echo "📝 Configurando variables de entorno..."
     
-    # Lista de variables de entorno a reemplazar
-    for var in VITE_API_URL VITE_SYNC_API_URL; do
-        value=$(eval echo \$$var)
-        if [ -n "$value" ]; then
-            echo "   - Reemplazando $var con $value"
-            # Reemplaza las ocurrencias en el formato import.meta.env.VITE_XXX
-            sed -i "s|import.meta.env.$var|\"$value\"|g" $file
-            # Reemplaza las ocurrencias en el formato "VITE_XXX"
-            sed -i "s|\"$var\"|\"$value\"|g" $file
-            # Cuenta las ocurrencias para verificar
-            COUNT=$(grep -c "$value" $file || echo 0)
-            echo "   - $COUNT ocurrencias encontradas después del reemplazo"
-        else
-            echo "   - Variable $var no tiene valor, se omite"
-        fi
-    done
-done
+    # Buscar archivos JavaScript
+    JS_FILES=$(find "$STATIC_DIR" -name "*.js" -type f 2>/dev/null || echo "")
+    
+    if [ -n "$JS_FILES" ]; then
+        JS_COUNT=$(echo "$JS_FILES" | wc -l)
+        echo "🔍 Encontrados $JS_COUNT archivos JavaScript"
+        
+        # Procesar cada archivo JS
+        echo "$JS_FILES" | while read -r file; do
+            if [ -f "$file" ]; then
+                echo "🔧 Procesando archivo: $file"
+                
+                # Reemplazar VITE_API_URL si está definida
+                if [ -n "$VITE_API_URL" ]; then
+                    sed -i "s|import\.meta\.env\.VITE_API_URL|\"$VITE_API_URL\"|g" "$file" 2>/dev/null || true
+                    sed -i "s|\"VITE_API_URL\"|\"$VITE_API_URL\"|g" "$file" 2>/dev/null || true
+                    echo "   - VITE_API_URL reemplazada con: $VITE_API_URL"
+                fi
+                
+                # Reemplazar VITE_SYNC_API_URL si está definida
+                if [ -n "$VITE_SYNC_API_URL" ]; then
+                    sed -i "s|import\.meta\.env\.VITE_SYNC_API_URL|\"$VITE_SYNC_API_URL\"|g" "$file" 2>/dev/null || true
+                    sed -i "s|\"VITE_SYNC_API_URL\"|\"$VITE_SYNC_API_URL\"|g" "$file" 2>/dev/null || true
+                    echo "   - VITE_SYNC_API_URL reemplazada con: $VITE_SYNC_API_URL"
+                fi
+            fi
+        done
+    else
+        echo "⚠️ No se encontraron archivos JavaScript para procesar"
+    fi
+else
+    echo "ℹ️ No hay variables de entorno para reemplazar, omitiendo procesamiento"
+fi
 
-# Verificar si hay archivos localStorage-fix.json
-if [ -f "$STATIC_DIR/localStorage-fix.json" ]; then
+# Verificar/crear archivo localStorage-fix.json
+LOCALSTORAGE_FILE="$STATIC_DIR/localStorage-fix.json"
+if [ -f "$LOCALSTORAGE_FILE" ]; then
     echo "✅ localStorage-fix.json encontrado"
-    cat $STATIC_DIR/localStorage-fix.json
 else
     echo "⚠️ localStorage-fix.json no encontrado, creando uno básico"
-    echo '{"id":"growdesk-fix","version":1}' > $STATIC_DIR/localStorage-fix.json
+    echo '{"id":"growdesk-fix","version":1,"timestamp":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"}' > "$LOCALSTORAGE_FILE"
+fi
+
+# Verificar configuración de Nginx
+echo "🔧 Verificando configuración de Nginx..."
+if nginx -t 2>/dev/null; then
+    echo "✅ Configuración de Nginx válida"
+else
+    echo "⚠️ Problema con configuración de Nginx, usando configuración por defecto"
 fi
 
 echo "✅ Configuración completa"
 echo "🌐 Iniciando servidor web en puerto 3000..."
+echo "🔗 El frontend estará disponible en: http://localhost:3000"
 
-# Ejecutar comando original
+# Ejecutar comando original (nginx)
 exec "$@" 

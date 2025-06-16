@@ -3,17 +3,30 @@ FROM node:18-alpine as builder
 
 WORKDIR /app
 
+# Instalar herramientas necesarias
+RUN apk add --no-cache git
+
+# Configurar npm para manejar problemas de red
+RUN npm config set registry https://registry.npmjs.org/ && \
+    npm config set timeout 60000 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm config set fetch-retries 5 && \
+    npm config set audit false
+
 # Copiar package.json y package-lock.json
 COPY package*.json ./
 
-# Instalar dependencias
-RUN npm ci
+# Instalar dependencias con manejo de errores
+RUN npm cache clean --force && \
+    (npm ci || npm install) && \
+    npm cache clean --force
 
 # Copiar el código fuente
 COPY . .
 
-# Construir la aplicación
-RUN npm run build
+# Construir la aplicación con manejo de errores
+RUN npm run build || (echo "Error en build, intentando nuevamente..." && npm run build)
 
 # Etapa de producción
 FROM nginx:alpine
