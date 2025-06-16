@@ -8,11 +8,11 @@ RUN apk add --no-cache git
 
 # Configurar npm para manejar problemas de red
 RUN npm config set registry https://registry.npmjs.org/ && \
-    npm config set timeout 60000 && \
     npm config set fetch-retry-mintimeout 20000 && \
     npm config set fetch-retry-maxtimeout 120000 && \
     npm config set fetch-retries 5 && \
-    npm config set audit false
+    npm config set audit false && \
+    npm config set fund false
 
 # Copiar package.json y package-lock.json
 COPY package*.json ./
