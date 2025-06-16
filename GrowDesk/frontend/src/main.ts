@@ -8,11 +8,14 @@ import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
 import { setupPrimeVue } from './plugins/primevue'
 
+// Solo importar los iconos de PrimeVue (estos sí funcionan)
+import 'primeicons/primeicons.css'
+
 // Importar Bootstrap CSS y JS
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-// Importar SOLO nuestro tema personalizado - NO importar archivos de PrimeVue
+// Importar nuestro tema personalizado (contiene todos los estilos necesarios)
 import './styles/theme.css'
 
 // Importar estilos básicos
