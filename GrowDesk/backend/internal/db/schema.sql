@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS users (
 -- Tabla de categorías
 CREATE TABLE IF NOT EXISTS categories (
     id TEXT PRIMARY KEY,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL UNIQUE,
     description TEXT,
     color TEXT,
     icon TEXT,
@@ -289,8 +289,8 @@ ON CONFLICT (id) DO NOTHING;
 -- Insertar categorías por defecto si no existen
 INSERT INTO categories (id, name, description, color, icon, active, created_at, updated_at)
 VALUES 
-    (gen_random_uuid()::text, 'Consultas Generales', 'Consultas y preguntas generales de los usuarios', '#3B82F6', 'help-circle', true, NOW(), NOW()),
-    (gen_random_uuid()::text, 'Soporte Técnico', 'Problemas técnicos y errores del sistema', '#EF4444', 'tool', true, NOW(), NOW()),
-    (gen_random_uuid()::text, 'Facturación', 'Consultas relacionadas con facturación y pagos', '#10B981', 'credit-card', true, NOW(), NOW()),
-    (gen_random_uuid()::text, 'Sugerencias', 'Sugerencias y mejoras del producto', '#8B5CF6', 'lightbulb', true, NOW(), NOW())
+    ('cat-general', 'Consultas Generales', 'Consultas y preguntas generales de los usuarios', '#3B82F6', 'help-circle', true, NOW(), NOW()),
+    ('cat-soporte', 'Soporte Técnico', 'Problemas técnicos y errores del sistema', '#EF4444', 'tool', true, NOW(), NOW()),
+    ('cat-facturacion', 'Facturación', 'Consultas relacionadas con facturación y pagos', '#10B981', 'credit-card', true, NOW(), NOW()),
+    ('cat-sugerencias', 'Sugerencias', 'Sugerencias y mejoras del producto', '#8B5CF6', 'lightbulb', true, NOW(), NOW())
 ON CONFLICT (name) DO NOTHING; 
